@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: avalontips
+site_author: realybin
+site_description: Some tips for Avalonia UI
+
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+#    - content.code.select
+    - content.tooltips
+    - navigation.footer
+#    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+#    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  language: zh
+  icon:
+    logo: 'material/school'
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: 亮色主题
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: 暗色主题
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: 系统主题
+plugins:
+  - offline
+#  - social:
+#      cards_layout_options:
+#        font_family: Noto Sans SC
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+  - tags:
+      tags_file: tags.md
+
+markdown_extensions:
+  - abbr
+  - tables
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      user: realybin
+      repo: avalontips
+  - pymdownx.saneheaders
+copyright: 'CC-BY-SA-4.0 or MulanOWL-BY-PL-SA-1.0'
+extra:
+  status:
+    new: 最近添加
+    deprecated: 弃用
+#  consent:
+#    title: Cookie
+#    description: >-
+#      我们使用 Cookie 来识别您的重复访问和偏好，以及衡量我们文档的有效性和用户是否找到了他们正在搜索的内容。在您的同意下，您可以帮助我们 使我们的文档更加完善。
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/realybin/avalontips
+repo_url: https://github.com/realybin/avalontips
+repo_name: realybin/avalontips
+edit_uri: edit/main/docs/
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+nav:
+  - 主页: index.md
+  - 入门:
+      - 写在前面的: basic/index.md
+      - 安装: basic/install.md
+  - 学习资料:
+      - 写在前面的: learning-materials/index.md
+  - 生态:
+      - 总览: ecosystem/index.md
+      - 3D: ecosystem/3d.md
+      - 动画: ecosystem/animation.md
+      - 图表: ecosystem/chart.md
+      - 墨迹: ecosystem/ink.md
+      - PDF: ecosystem/pdf.md
+      - 视频: ecosystem/video.md
+      - WebView: ecosystem/webview.md
+  - 部署:
+      - 写在前面的: deploy/index.md
+      - Native Aot: deploy/native-aot.md
+      - LoongArch: deploy/loongarch.md
+      - UOS: deploy/uos.md
+      - 麒麟: deploy/kylin.md
+      - 方德: deploy/found.md
+  - 常见问题:
+      - 预览器: troubleshooting/previewer.md
+      - Transitions: troubleshooting/transitions.md
+      - Trigger: troubleshooting/trigger.md
+      - 字体: troubleshooting/fonts.md
+      - WASM: troubleshooting/wasm.md
+      - 性能: troubleshooting/performance.md
+      - 包体大小: troubleshooting/package-size.md
+      - 资源: troubleshooting/resources.md
